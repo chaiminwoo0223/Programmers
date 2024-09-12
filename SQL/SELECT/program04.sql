@@ -1,6 +1,0 @@
--- 조건에 부합하는 중고거래 댓글 조회하기
-SELECT b.TITLE, b.BOARD_ID, r.REPLY_ID, r.WRITER_ID, r.CONTENTS, DATE_FORMAT(r.CREATED_DATE, "%Y-%m-%d") AS "CREATED_DATE"
-FROM used_goods_board b
-INNER JOIN used_goods_reply r ON b.BOARD_ID = r.BOARD_ID
-WHERE b.CREATED_DATE >= "2022-10-01" AND b.CREATED_DATE <= "2022-10-31"
-ORDER BY r.CREATED_DATE, b.TITLE;
