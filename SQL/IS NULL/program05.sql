@@ -1,0 +1,3 @@
+-- 잡은 물고기의 평균 길이 구하기
+SELECT ROUND(AVG(IF(LENGTH IS NULL, 10, LENGTH)), 2) AS "AVERAGE_LENGTH"
+FROM fish_info;
