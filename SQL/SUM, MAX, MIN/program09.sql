@@ -1,0 +1,8 @@
+-- 연도별 대장균 크기의 편차 구하기
+SELECT YEAR(DIFFERENTIATION_DATE) AS "YEAR", 
+       (SELECT MAX(SIZE_OF_COLONY) 
+        FROM ecoli_data 
+        WHERE YEAR(DIFFERENTIATION_DATE) = YEAR) - SIZE_OF_COLONY AS "YEAR_DEV",
+        ID
+FROM ecoli_data
+ORDER BY YEAR, YEAR_DEV;
