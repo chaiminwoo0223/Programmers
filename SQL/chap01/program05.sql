@@ -1,0 +1,4 @@
+-- 인기있는 아이스크림
+SELECT FLAVOR
+FROM first_half
+ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID;
