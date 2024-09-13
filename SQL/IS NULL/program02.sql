@@ -1,5 +1,0 @@
--- 이름이 있는 동물의 아이디
-SELECT ANIMAL_ID
-FROM animal_ins
-WHERE NAME IS NOT NULL
-ORDER BY ANIMAL_ID;
