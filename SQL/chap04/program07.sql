@@ -1,0 +1,6 @@
+-- ROOT 아이템 구하기
+SELECT ii.ITEM_ID AS "ITEM_ID", ii.ITEM_NAME AS "ITEM_NAME"
+FROM item_info ii 
+INNER JOIN item_tree it ON ii.ITEM_ID = it.ITEM_ID
+WHERE it.PARENT_ITEM_ID IS NULL
+ORDER BY ii.ITEM_ID;
