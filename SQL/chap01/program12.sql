@@ -1,0 +1,5 @@
+-- 어린 동물 찾기
+SELECT ANIMAL_ID, NAME
+FROM animal_ins
+WHERE INTAKE_CONDITION != "Aged"
+ORDER BY ANIMAL_ID;
