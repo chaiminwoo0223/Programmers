@@ -1,0 +1,5 @@
+-- Python 개발자 찾기
+SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
+FROM developer_infos
+WHERE "Python" IN (SKILL_1, SKILL_2, SKILL_3)
+ORDER BY ID;
