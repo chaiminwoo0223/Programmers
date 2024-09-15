@@ -15,3 +15,4 @@ def solution(progresses, speeds):
         distribution.append(count)
         
     return distribution
+    
