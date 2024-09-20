@@ -1,0 +1,7 @@
+-- 조건에 맞는 사원 정보 조회하기
+SELECT SUM(hg.SCORE) AS "SCORE", he.EMP_NO AS "EMP_NO", he.EMP_NAME AS "EMP_NAME", he.POSITION AS "POSITION", he.EMAIL AS "EMAIL"
+FROM hr_employees he
+INNER JOIN hr_grade hg ON he.EMP_NO = hg.EMP_NO
+GROUP BY EMP_NO
+ORDER BY SCORE DESC
+LIMIT 1;
