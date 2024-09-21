@@ -1,11 +1,8 @@
 # 전화번호 목록
-def solution(phone_book):
-    phone_book.sort() # 전화번호 목록 정렬
-    
-    if len(phone_book) != 1:
-        for i in range(1, len(phone_book)):
-            if phone_book[i].startswith(phone_book[i-1]):
-                return False
-        return True
-    else:
-        return True
+def solution(phoneBook):
+    phoneBook.sort() # 전화번호 목록 정렬
+
+    for p1, p2 in zip(phoneBook, phoneBook[1:]): # zip(리스트1, 리스트2)
+        if p2.startswith(p1):
+            return False
+    return True
