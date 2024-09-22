@@ -1,0 +1,7 @@
+-- 오랜 기간 보호한 동물(1)
+SELECT ai.NAME AS "NAME", ai.DATETIME AS "DATETIME"
+FROM animal_ins ai 
+LEFT OUTER JOIN animal_outs ao ON ai.ANIMAL_ID = ao.ANIMAL_ID
+WHERE ao.ANIMAL_ID IS NULL
+ORDER BY DATETIME
+LIMIT 3;
