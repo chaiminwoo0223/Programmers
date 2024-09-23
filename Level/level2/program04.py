@@ -10,6 +10,3 @@ def solution(s):
         print(s)
     
     return count
-
-s = "110010101001"
-print(solution(s))
