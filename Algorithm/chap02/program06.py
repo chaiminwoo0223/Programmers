@@ -1,17 +1,13 @@
 # 주식가격
 def solution(prices):
-    answer = []
+    answer = [0] * len(prices)
     
-    for i in range(len(prices)-1):
-        maintain = 0
-        
+    for i in range(len(prices)):
         for j in range(i+1, len(prices)):
-            maintain += 1
-            if prices[i] > prices[j]:
+            if prices[i] <= prices[j]:
+                answer[i] += 1
+            else:
+                answer[i] += 1
                 break
                 
-        answer.append(maintain)
-        
-    answer.append(0)
-    
     return answer
