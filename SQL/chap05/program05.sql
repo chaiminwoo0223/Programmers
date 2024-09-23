@@ -1,0 +1,6 @@
+-- 없어진 기록 찾기
+SELECT ao.ANIMAL_ID AS "ANIMAL_ID", ao.NAME AS "NAME"
+FROM animal_ins ai 
+RIGHT OUTER JOIN animal_outs ao ON ai.ANIMAL_ID = ao.ANIMAL_ID
+WHERE ai.DATETIME IS NULL
+ORDER BY ao.ANIMAL_ID;
