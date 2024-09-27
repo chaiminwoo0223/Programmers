@@ -1,0 +1,7 @@
+-- 즐겨찾기가 가장 많은 식당 정보 출력하기
+-- GROUP BY: 음식 종류와 즐겨찾기 수는 제대로 나오지만, 식당 ID와 식당 이름은 다르게 나온다.
+SELECT r.FOOD_TYPE, r.REST_ID, r.REST_NAME, r.FAVORITES
+FROM rest_info r 
+INNER JOIN (SELECT FOOD_TYPE, MAX(FAVORITES) AS "FAVORITES" FROM rest_info GROUP BY FOOD_TYPE) t
+ON r.FOOD_TYPE = t.FOOD_TYPE AND r.FAVORITES = t.FAVORITES
+ORDER BY FOOD_TYPE DESC;
