@@ -1,14 +1,11 @@
+# 카펫
 import math
 
 def solution(brown, yellow):
-    quadrangle = brown + yellow
+    total = brown + yellow
     
-    if yellow % math.sqrt(yellow) == 0: # 정사각형
-        return [int(math.sqrt(yellow)) + 2, int(math.sqrt(yellow)) + 2]
-    
-    for i in range(1, brown+1): # 그 외
-        for j in range(1, i+1):
-            if (i * j) == quadrangle:
-                return [i, j]
-
-print(solution(3004, 2996))
+    for height in range(1, int(math.sqrt(total))+1):
+        if total % height == 0:
+            width = total // height
+            if (width - 2) * (height - 2) == yellow: # 테두리
+                return [width, height]
