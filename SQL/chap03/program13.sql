@@ -1,0 +1,8 @@
+-- 조건에 맞는 사용자와 총 거래금액 조회하기
+SELECT ugu.USER_ID AS "USER_ID", ugu.NICKNAME AS "NICKNAME", SUM(ugb.PRICE) AS "TOTAL_SALES"
+FROM used_goods_board ugb
+RIGHT JOIN used_goods_user ugu ON ugb.WRITER_ID = ugu.USER_ID
+WHERE ugb.STATUS = "DONE"
+GROUP BY ugu.USER_ID
+HAVING TOTAL_SALES >= 700000
+ORDER BY TOTAL_SALES;
