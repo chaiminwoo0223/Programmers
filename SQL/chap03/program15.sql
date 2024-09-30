@@ -1,0 +1,6 @@
+-- 부서별 평균 연봉 조회하기
+SELECT hd.DEPT_ID AS "DEPT_ID", DEPT_NAME_EN, ROUND(AVG(SAL)) AS "AVG_SAL"
+FROM hr_department hd
+RIGHT OUTER JOIN hr_employees he ON hd.DEPT_ID = he.DEPT_ID
+GROUP BY hd.DEPT_ID
+ORDER BY AVG_SAL DESC;
