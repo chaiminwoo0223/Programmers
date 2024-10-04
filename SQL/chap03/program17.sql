@@ -1,4 +1,5 @@
 -- 대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기
+-- IN 조건에 다른 SELECT문을 넣을 수 있음
 SELECT MONTH(START_DATE) AS "MONTH", CAR_ID, count(*) AS RECORDS
 FROM car_rental_company_rental_history
 WHERE CAR_ID IN (SELECT CAR_ID
