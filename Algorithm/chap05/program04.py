@@ -1,4 +1,5 @@
 # 카펫
+# 결국 구해야 하는 것은 테두리의 (가로+2), (세로+2) 길이
 import math
 
 def solution(brown, yellow):
