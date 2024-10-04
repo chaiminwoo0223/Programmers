@@ -1,17 +1,14 @@
 # 숫자의 표현
-def solution(n):
-    result = 1
-    
-    for i in range(1, n//2+1):
-        total = 0
+def solution(number):
+    count = 0
         
-        while total < n:
-            total += i
-            
-            if total == n:
-                result += 1
-                break
-                
+    # 연속한 자연수들의 합
+    for i in range(number):
+        total = 0
+        while total < number:
             i += 1
-            
-    return result
+            total += i
+        if total == number:
+            count += 1
+    
+    return count
