@@ -1,4 +1,5 @@
 -- 오프라인/온라인 판매 데이터 통합하기
+-- UNION: 여러 테이블의 데이터를 합쳐서 보여준다.(중복 제거) <--> UNION ALL
 SELECT DATE_FORMAT(SALES_DATE, "%Y-%m-%d") AS SALES_DATE, PRODUCT_ID, USER_ID, SALES_AMOUNT
 FROM online_sale 
 WHERE SALES_DATE LIKE "2022-03%"
