@@ -1,0 +1,7 @@
+-- 취소되지 않은 진료 예약 조회하기
+SELECT APNT_NO, PT_NAME, a.PT_NO AS PT_NO, a.MCDP_CD AS MCDP_CD, DR_NAME, APNT_YMD
+FROM appointment a
+INNER JOIN doctor d ON a.MDDR_ID = d.DR_ID
+INNER JOIN patient p ON a.PT_NO = p.PT_NO
+WHERE a.MCDP_CD = "CS" AND a.APNT_CNCL_YN = "N" AND a.APNT_YMD LIKE "2022-04-13%"
+ORDER BY APNT_YMD;
