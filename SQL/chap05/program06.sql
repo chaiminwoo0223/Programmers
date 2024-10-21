@@ -1,0 +1,7 @@
+-- 주문량이 많은 아이스크림들 조회하기
+SELECT j.FLAVOR AS FLAVOR
+FROM july j 
+LEFT JOIN first_half f ON j.FLAVOR = f.FLAVOR
+GROUP BY j.FLAVOR
+ORDER BY (SUM(j.TOTAL_ORDER) + f.TOTAL_ORDER) DESC
+LIMIT 3;
