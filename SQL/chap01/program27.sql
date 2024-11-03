@@ -1,5 +1,4 @@
--- 특정 형질을 가지는 대장균 찾기
-SELECT COUNT(*) AS COUNT
-FROM ecoli_data
-WHERE NOT SUBSTRING(CONV(GENOTYPE, 10, 2), -2, 1) = "1" 
-      AND (SUBSTRING(CONV(GENOTYPE, 10, 2), -1, 1) = "1" OR SUBSTRING(CONV(GENOTYPE, 10, 2), -3, 1) = "1");
+-- 대장균들의 자식의 수 구하기
+SELECT e.ID AS ID, (SELECT COUNT(*) FROM ecoli_data WHERE PARENT_ID = e.ID) AS CHILD_COUNT
+FROM ecoli_data e
+ORDER BY ID;
