@@ -1,5 +1,4 @@
--- 특정 형질을 가지는 대장균 찾기
-SELECT COUNT(*) AS COUNT
+-- 대장균의 크기에 따라 분류하기 1
+SELECT ID, IF(SIZE_OF_COLONY <= 100, "LOW", IF(SIZE_OF_COLONY <= 1000, "MEDIUM", "HIGH")) AS SIZE
 FROM ecoli_data
-WHERE NOT SUBSTRING(CONV(GENOTYPE, 10, 2), -2, 1) = "1" 
-      AND (SUBSTRING(CONV(GENOTYPE, 10, 2), -1, 1) = "1" OR SUBSTRING(CONV(GENOTYPE, 10, 2), -3, 1) = "1");
+ORDER BY ID;
