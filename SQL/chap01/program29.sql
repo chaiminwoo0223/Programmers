@@ -6,4 +6,4 @@ WHERE PARENT_ID IN (SELECT ID
                     WHERE PARENT_ID IN (SELECT ID
                                         FROM ecoli_data 
                                         WHERE PARENT_ID IS NULL))
-ORDER BY ID
+ORDER BY ID;
