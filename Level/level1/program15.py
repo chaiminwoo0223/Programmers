@@ -1,9 +1,10 @@
 # 음양 더하기
+# zip 함수
 def solution(absolutes, signs):
     result = 0
 
-    for i, absolute in enumerate(absolutes):
-        if signs[i] == True:
+    for absolute, sign in zip(absolutes, signs):
+        if sign:
             result += absolute
         else:
             result -= absolute
