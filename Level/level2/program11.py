@@ -2,11 +2,11 @@
 from collections import Counter
 
 def solution(k, tangerine):
+    counter = Counter(tangerine)
     result = 0
-    counter = Counter(tangerine).values()
 
-    for value in sorted(counter, reverse=True):
-        k -= value
+    for _, n in counter.most_common():
+        k -= n
         result += 1
 
         if k <= 0:
