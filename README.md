@@ -8,3 +8,4 @@
 - program20.py [10월3주차]
 - program23.py [11월2주차]
 - program24.py [11월2주차]
+- program26.py [11월2주차]
