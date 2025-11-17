@@ -11,4 +11,3 @@
 - program26.py [11월2주차]
 
 ## Level3
-- program01.py [11월2주차]

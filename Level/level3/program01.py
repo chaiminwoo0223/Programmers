@@ -1,19 +1,19 @@
 # 네트워크
 # dfs
 def solution(n, computers):
-    answer = 0
-    visited = [0] * n
+    visited = [0] * len(computers)
+    result = 0
 
-    for i in range(n):
+    for i in range(len(computers)):
         if not visited[i]:
-            dfs(computers, visited, i)
-            answer += 1
+            dfs(i, computers, visited)
+            result += 1
 
-    return answer
+    return result
 
-def dfs(computers, visited, i):
-    visited[i] = 1
+def dfs(x, computers, visited):
+    visited[x] = 1
 
-    for j in range(len(computers[i])):
-        if not visited[j] and computers[i][j]:
-            dfs(computers, visited, j)
+    for j in range(len(computers)):
+        if not visited[j] and computers[x][j]:
+            dfs(j, computers, visited)
