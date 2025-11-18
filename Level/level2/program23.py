@@ -2,16 +2,14 @@
 # split("k")
 # sort(key=len)
 def solution(s):
-    result = []
-
-    s = s[2:-2].split("},{")
+    s = s.replace("{{", "").replace("}}", "").split("},{")
     s.sort(key=len)
 
-    for numbers in s:
-        numbers = numbers.split(",")
+    result = []
 
-        for number in numbers:
-            if int(number) not in result:
-                result.append(int(number))
+    for numbers in s:
+        for number in map(int, numbers.split(",")):
+            if number not in result:
+                result.append(number)
 
     return result
