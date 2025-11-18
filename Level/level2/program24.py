@@ -1,25 +1,24 @@
 # 롤케이크 자르기
-# Counter
-# del
+# del Counter
 from collections import Counter
 
-def solution(toppings):
-    answer = 0
-    left = Counter(toppings)
+def solution(topping):
+    result = 0
+    left = Counter(topping)
     right = {}
 
-    for topping in toppings:
-        if topping in right:
-            right[topping] += 1
+    for t in topping:
+        if t in right:
+            right[t] += 1
         else:
-            right[topping] = 1
+            right[t] = 1
 
-        left[topping] -= 1
+        left[t] -= 1
 
-        if not left[topping]:
-            del left[topping]  # Counter에서 개별 요소 삭제
+        if not left[t]:
+            del left[t]  # Counter에서 개별 요소 삭제
 
         if len(left) == len(right):
-            answer += 1
+            result += 1
 
-    return answer
+    return result
