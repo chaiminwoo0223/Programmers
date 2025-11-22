@@ -1,23 +1,24 @@
 # 기사단원의 무기
+# 핵심: 약수 구하기(제곱근) -> O(루트(N))
+from math import sqrt
+
 def solution(number, limit, power):
-    answer = 0
-    weapon = []
+    result = 0
 
-    for i in range(1, number + 1):
-        results = []
+    for n in range(1, number + 1):
+        result += weapons(n, limit, power)
 
-        for j in range(1, int(i ** (1 / 2)) + 1):  # 핵심
-            if i % j == 0:
-                results.append(j)
-                results.append(i // j)
+    return result
 
-        result = len(set(results))
+def weapons(x, limit, power):
+    weapon = set()
 
-        if result > limit:
-            weapon.append(power)
-        else:
-            weapon.append(result)
+    for i in range(1, int(sqrt(x) + 1)):
+        if x % i == 0:  # 핵심
+            weapon.add(i)
+            weapon.add(x // i)
 
-    answer = sum(weapon)
-
-    return answer
+    if len(weapon) > limit:
+        return power
+    else:
+        return len(weapon)
