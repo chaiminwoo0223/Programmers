@@ -1,15 +1,14 @@
 # 둘만의 암호
-# String.find(k)
 # String.replace(a, b)와 index
 # 꼭 import를 사용하지 않아도 된다.
 def solution(s, skip, index):
-    alpha = "abcdefghijklmnopqrstuvwxyz"
-    answer = ""
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    result = ""
 
-    for i in list(skip):
-        alpha = alpha.replace(i, "")
+    for x in skip:
+        alphabet = alphabet.replace(x, "")
 
-    for a in s:
-        answer += alpha[(alpha.find(a) + index) % len(alpha)]
+    for c in s:
+        result += alphabet[(alphabet.index(c) + index) % len(alphabet)]
 
-    return answer
+    return result
