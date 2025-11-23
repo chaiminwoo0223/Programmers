@@ -15,9 +15,9 @@ def solution(topping):
         right[t] -= 1
 
         if not right[t]:
-            del right[t]  # Counter에서 개별 요소 삭제
+            del right[t]
 
-        if len(left) == len(right):
+        if len(left.keys()) == len(right.keys()):  # Counter에서 개별 요소 삭제
             result += 1
 
     return result
