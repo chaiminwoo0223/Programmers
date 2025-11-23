@@ -1,5 +1,4 @@
 ## Level1
-- program50.py [10월3주차]
 
 ## Level2
 - program24.py [11월2주차]

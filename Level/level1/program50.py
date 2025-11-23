@@ -6,19 +6,16 @@ def solution(number, limit, power):
     result = 0
 
     for n in range(1, number + 1):
-        result += weapons(n, limit, power)
+        result += divisor(n, limit, power)
 
     return result
 
-def weapons(x, limit, power):
-    weapon = set()
+def divisor(x, limit, power):
+    result = set()
 
     for i in range(1, int(sqrt(x) + 1)):
-        if x % i == 0:  # 핵심
-            weapon.add(i)
-            weapon.add(x // i)
+        if x % i == 0:
+            result.add(i)
+            result.add(x // i)
 
-    if len(weapon) > limit:
-        return power
-    else:
-        return len(weapon)
+    return power if len(result) > limit else len(result)
