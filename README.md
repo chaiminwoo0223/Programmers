@@ -5,3 +5,4 @@
 
 ## Level3
 - program04.py
+- program06.py
