@@ -11,7 +11,7 @@ def solution(genres, plays):
         if genre not in counter1.keys():
             counter1[genre] = [(i, play)]
         else:
-            counter1[genre].append(((i, play)))  # 핵심
+            counter1[genre].append((i, play))  # 핵심
 
         if genre not in counter2.keys():
             counter2[genre] = play
