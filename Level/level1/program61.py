@@ -1,8 +1,9 @@
 # 로또의 최고 순위와 최저 순위
-# 조건을 정확히 반영해야 문제가 풀린다.
+# 시뮬레이션
 def solution(lottos, win_nums):
-    ranking = [6, 6, 5, 4, 3, 2, 1]
-    zero = lottos.count(0)
-    hit = sum(1 for win_num in win_nums if win_num in lottos)
+    rank = [6, 6, 5, 4, 3, 2, 1]
 
-    return [ranking[zero + hit], ranking[hit]]
+    zeros = lottos.count(0)
+    matched = len(set(lottos) & set(win_nums))
+
+    return [rank[matched + zeros], rank[matched]]
