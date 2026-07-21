@@ -4,7 +4,6 @@
 
 ## Level2
 - program30.py
-- program32.py
 - program33.py
 - program34.py
 - program35.py
@@ -31,4 +30,5 @@
 - program15.py
 
 # 복습
-- program61.py
+- program61.py [Lv1]
+- program32.py [Lv2]
