@@ -30,5 +30,3 @@
 - program15.py
 
 # 복습
-- program61.py [Lv1]
-- program32.py [Lv2]
